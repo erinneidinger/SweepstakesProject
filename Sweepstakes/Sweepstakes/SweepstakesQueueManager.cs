@@ -11,30 +11,25 @@ namespace Sweepstakes
 
         Sweepstakes rear;
         Sweepstakes front;
-        Stack<Sweepstakes> stack;
+        Queue<Sweepstakes> myQueue;
 
         public SweepstakesQueueManager()
         {
-            stack = new Stack<Sweepstakes>();
+            myQueue = new Queue<Sweepstakes>();
+            front = null;
         }
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        public Sweepstakes InsertSweepstakes (Sweepstakes sweepstakes)
         {
-           
+                myQueue.Enqueue(sweepstakes);
+
+            return sweepstakes;
         }
 
-        public void GetSweepstakes(Sweepstakes sweepstakes)
+        public Sweepstakes GetSweepstakes (Sweepstakes sweepstakes)
         {
+            myQueue.Dequeue();
 
+            return sweepstakes;
         }
-
-        public void Enqueue(Sweepstakes sweepstakes)
-        {
-            
-        }
-        public void Dequeue(Sweepstakes sweepstakes)
-        {
-
-        }
-
     }
 }

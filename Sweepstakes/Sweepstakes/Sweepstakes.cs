@@ -11,7 +11,7 @@ namespace Sweepstakes
         Dictionary<int, string> dictionary = new Dictionary<int, string>();
         string winner;
 
-        public Sweepstakes(string name)
+        public Sweepstakes()
         {
             Random rnd = new Random();
         }

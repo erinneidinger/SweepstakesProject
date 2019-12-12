@@ -8,22 +8,26 @@ namespace Sweepstakes
 {
     public class SweepstakesStackManager : ISweepstakesManager
     {
-        public Stack<Sweepstakes> stack; 
+        public Stack<Sweepstakes> myStack; 
         public Sweepstakes top; 
 
         public SweepstakesStackManager()
         {
-            stack = new Stack<Sweepstakes>();
+            myStack = new Stack<Sweepstakes>();
             top = null;
         }
-        public void InsertSweepstakes(Sweepstakes sweepstakes)
+        public Sweepstakes InsertSweepstakes(Sweepstakes sweepstakes)
         {
-            stack.Push(sweepstakes);
+            myStack.Push(sweepstakes);
+
+            return sweepstakes;
         }
 
-        public void GetSweepstakes(Sweepstakes sweepstakes)
+        public Sweepstakes GetSweepstakes(Sweepstakes sweepstakes)
         {
+            myStack.Pop();
 
+            return sweepstakes;
         }
     }
 }

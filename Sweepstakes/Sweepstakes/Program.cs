@@ -10,7 +10,12 @@ namespace Sweepstakes
     {
         static void Main(string[] args)
         {
+            List<ISweepstakesManager> sweepstakeStructures = new List<ISweepstakesManager>();
+            SweepstakesQueueManager myQueue = new SweepstakesQueueManager();
+            SweepstakesStackManager myStack = new SweepstakesStackManager();
 
+            sweepstakeStructures.Add(myQueue);
+            sweepstakeStructures.Add(myStack);
         }
     }
 }
