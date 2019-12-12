@@ -6,30 +6,33 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class UserInterface
-    {
-        public UserInterface()
-        {
+    static class UserInterface
+    { 
 
-        }
-        public void AssignFirstName()
+        public static void AssignFirstName()
         {
             Console.WriteLine("Please enter your first name:");
-            Console.ReadLine();
+            string firstname = Console.ReadLine();
+            Console.WriteLine("Your first name is: " + firstname);
         }
-        public void AssignLastName()
+        public static void AssignLastName()
         {
             Console.WriteLine("Please enter your last name:");
-            Console.ReadLine();
+            string lastname = Console.ReadLine();
+            Console.WriteLine("Your last name is: " + lastname);
         }
-        public void AssignEmail()
+        public static void AssignEmail()
         {
             Console.WriteLine("Please enter your email:");
-            Console.ReadLine();
+            string email = Console.ReadLine();
+            Console.WriteLine("Your email is: " + email);
         }
-        public void AssignRegistrationNumber()
+        public static void AssignRegistrationNumber(Random rnd)
         {
+            int registrationnumber;
 
+            registrationnumber = rnd.Next(1, 1000);
+            Console.WriteLine("Your registration number is: " + registrationnumber);
         }
     }
 }

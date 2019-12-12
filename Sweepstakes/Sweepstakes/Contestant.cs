@@ -6,16 +6,54 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class Contestant
+    public class Contestant
     {
-        string firstname;
-        string lastname;
-        string email;
-        string registrationnumber;
+        public string fullinfo;
+        private string firstname;
+        public string Firstname
+        {
+            get
+            {
+                return firstname;
+            }
+        }
+
+        private string lastname;
+        public string Lastname
+        {
+            get
+            {
+                return lastname;
+            }
+        }
+
+        private string email;
+        public string Email
+        {
+            get
+            {
+                return email;
+            }
+        }
+
+        private int registrationnumber;
+        public int Registrationnumber
+        {
+            get
+            {
+                return registrationnumber;
+            }
+        }
 
         public Contestant()
         {
-            
+            Contestant contestant = new Contestant();
+            Random rnd = new Random();
+        }
+        public string AddFullName()
+        {
+            fullinfo = (Firstname + " " + Lastname + " " + Email);
+            return fullinfo;
         }
     }
 }

@@ -8,23 +8,24 @@ namespace Sweepstakes
 {
     public class Sweepstakes
     {
-        Dictionary<string, string> dictionary = new Dictionary<string, string>();
+        Dictionary<int, string> dictionary = new Dictionary<int, string>();
+        string winner;
 
         public Sweepstakes(string name)
         {
-           
+            Random rnd = new Random();
         }
         public void RegisterContestant(Contestant contestant)
         {
-
+            dictionary.Add(contestant.Registrationnumber, contestant.fullinfo);
         }
-        public void PickWinnter()
+        public void PickWinnter(Random rnd)
         {
-
+            winner = dictionary[rnd.Next(dictionary.Count)];
         }
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            Console.WriteLine(winner);
         }
     }
 }
