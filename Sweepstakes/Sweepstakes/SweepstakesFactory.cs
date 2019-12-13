@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    class SweepstakesFactory 
+    public class SweepstakesFactory 
     {
-        public Sweepstakes CreateSweepstake(string structure)
+        public ISweepstakesManager CreateSweepstake(string structure)
         {
-            Console.WriteLine("Please choose how you would like to manage your sweepstake. Type either 'queue' or 'stack'.");
             switch (structure.ToLower())
             {
                 case "queue":
-                    return;
+                    return new SweepstakesQueueManager();
                 case "stack":
-                    return ;
+                    return new SweepstakesStackManager();
                 default:
-                    Console.WriteLine("Not a valid option.");
-                    break;
+                    Console.WriteLine("Not a valid option");
+                    return null;
             }
         }
     }
