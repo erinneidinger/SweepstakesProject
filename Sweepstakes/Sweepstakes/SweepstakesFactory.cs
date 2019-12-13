@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class SweepstakesFactory 
+    public static class SweepstakesFactory 
     {
-        public ISweepstakesManager CreateSweepstake(string structure)
+        public static ISweepstakesManager CreateSweepstakesManager(string structure)
         {
             switch (structure.ToLower())
             {

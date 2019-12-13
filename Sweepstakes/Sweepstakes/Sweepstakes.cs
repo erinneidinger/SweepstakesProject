@@ -5,27 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sweepstakes
-{
+{//subject
     public class Sweepstakes
     {
-        Dictionary<int, string> dictionary = new Dictionary<int, string>();
-        string winner;
+        Random rnd = new Random();
+        Dictionary<int, Contestant> dictionary;
+        Contestant winner;
+        private List<IContestant> contestants = new List<IContestant>();
 
         public Sweepstakes()
         {
-            Random rnd = new Random();
+            dictionary = new Dictionary<int, Contestant>();
         }
+
         public void RegisterContestant(Contestant contestant)
         {
-            dictionary.Add(contestant.Registrationnumber, contestant.fullinfo);
+            dictionary.Add(contestant.Registrationnumber, contestant);
         }
-        public void PickWinnter(Random rnd)
+        public string PickWinner()
         {
-            winner = dictionary[rnd.Next(dictionary.Count)];
+            winner = dictionary[rnd.Next(1, dictionary.Count)];
+            return winner.Firstname + winner.Lastname;
         }
         public void PrintContestantInfo(Contestant contestant)
         {
             Console.WriteLine(winner);
+            Console.WriteLine(contestant); 
+        }
+        public void NotifyContestants()
+        {
+            foreach (IContestant contestant in contestants)
+            {
+                contestant.Notify(contestant);
+
+                //if (contestant == winner)
+                {
+
+                }
+            }
         }
     }
 }

@@ -6,54 +6,69 @@ using System.Threading.Tasks;
 
 namespace Sweepstakes
 {
-    public class Contestant
+    //concreteobserver
+    public class Contestant : IContestant
     {
-        public string fullinfo;
-        private string firstname;
+
+        string firstname;
         public string Firstname
         {
             get
             {
                 return firstname;
             }
+            set
+            {
+                firstname = value;
+            }
         }
 
-        private string lastname;
+        string lastname;
         public string Lastname
         {
             get
             {
                 return lastname;
             }
+            set
+            {
+                lastname = value;
+            }
         }
 
-        private string email;
+        string email;
         public string Email
         {
             get
             {
                 return email;
             }
+            set
+            {
+                email = value;
+            }
         }
 
-        private int registrationnumber;
+        int registrationnumber;
         public int Registrationnumber
         {
             get
             {
                 return registrationnumber;
             }
+            set
+            {
+                registrationnumber += 1;
+            }
         }
 
         public Contestant()
-        {
-            Contestant contestant = new Contestant();
-            Random rnd = new Random();
+        { 
+            registrationnumber = 1;
         }
-        public string AddFullName()
+        public void Notify(IContestant contestant)
         {
-            fullinfo = (Firstname + " " + Lastname + " " + Email);
-            return fullinfo;
+            //Console.Write("The winner of this sweepstake is {0}! \n", );
         }
     }
 }

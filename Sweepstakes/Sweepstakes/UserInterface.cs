@@ -7,32 +7,29 @@ using System.Threading.Tasks;
 namespace Sweepstakes
 {
     static class UserInterface
-    { 
-
-        public static void AssignFirstName()
+    {
+        public static void AssignFirstName(Contestant contestant)
         {
             Console.WriteLine("Please enter your first name:");
-            string firstname = Console.ReadLine();
-            Console.WriteLine("Your first name is: " + firstname);
+            contestant.Firstname = Console.ReadLine();
+            Console.WriteLine("Your first name is: " + contestant.Firstname);
+           
         }
-        public static void AssignLastName()
+        public static void AssignLastName(Contestant contestant)
         {
             Console.WriteLine("Please enter your last name:");
-            string lastname = Console.ReadLine();
-            Console.WriteLine("Your last name is: " + lastname);
+            contestant.Lastname = Console.ReadLine();
+            Console.WriteLine("Your last name is: " + contestant.Lastname);
         }
-        public static void AssignEmail()
+        public static void AssignEmail(Contestant contestant)
         {
             Console.WriteLine("Please enter your email:");
-            string email = Console.ReadLine();
-            Console.WriteLine("Your email is: " + email);
+            contestant.Email = Console.ReadLine();
+            Console.WriteLine("Your email is: " + contestant.Email);
         }
-        public static void AssignRegistrationNumber(Random rnd)
-        {
-            int registrationnumber;
-
-            registrationnumber = rnd.Next(1, 1000);
-            Console.WriteLine("Your registration number is: " + registrationnumber);
+        public static void AssignRegistrationNumber(Contestant contestant)
+        { 
+            Console.WriteLine("Your registration number is: " + contestant.Registrationnumber);
         }
     }
 }

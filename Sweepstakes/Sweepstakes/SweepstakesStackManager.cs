@@ -9,12 +9,10 @@ namespace Sweepstakes
     public class SweepstakesStackManager : ISweepstakesManager
     {
         public Stack<Sweepstakes> myStack; 
-        public Sweepstakes top; 
 
         public SweepstakesStackManager()
         {
             myStack = new Stack<Sweepstakes>();
-            top = null;
         }
         public Sweepstakes InsertSweepstakes(Sweepstakes sweepstakes)
         {
