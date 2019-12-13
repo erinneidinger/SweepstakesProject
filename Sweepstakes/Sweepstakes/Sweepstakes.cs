@@ -12,10 +12,12 @@ namespace Sweepstakes
         Dictionary<int, Contestant> dictionary;
         Contestant winner;
         private List<IContestant> contestants = new List<IContestant>();
+        string name;
 
-        public Sweepstakes()
+        public Sweepstakes(string name)
         {
             dictionary = new Dictionary<int, Contestant>();
+            this.name = name;
         }
 
         public void RegisterContestant(Contestant contestant)
