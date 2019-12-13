@@ -14,7 +14,8 @@ namespace Sweepstakes
             string input = Console.ReadLine();
             ISweepstakesManager manager = SweepstakesFactory.CreateSweepstakesManager(input);
             MarketingFirm marketingfirm = new MarketingFirm(manager);
-            Sweepstakes sweepstakes = new Sweepstakes();
+            string name = Console.ReadLine();
+            Sweepstakes sweepstakes = new Sweepstakes(name);
             marketingfirm.manager.InsertSweepstakes(sweepstakes);
         }
     }
